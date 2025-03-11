@@ -23,9 +23,9 @@
     <profiles>
         <profile>
             <id>profile-1</id>
-            <properties>
+            <activation>
                 <jdk>19</jdk>
-            </properties>
+            </activation>
             <repositories>
                 <repository>
                     <id>maven-repo</id>
@@ -79,6 +79,11 @@
                     </resource>
                 </resources>
             </build>
+            <activation>
+                <file>
+                    <exists>main/src/main/resources/config-pr2/application.properties</exists>
+                </file>
+            </activation>
         </profile>
     </profiles>
 
