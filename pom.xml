@@ -20,4 +20,66 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>profile-1</id>
+            <properties>
+                <jdk>19</jdk>
+            </properties>
+            <repositories>
+                <repository>
+                    <id>maven-repo</id>
+                    <url>https://mvnrepository.com/</url>
+                </repository>
+            </repositories>
+            <dependencies>
+                <dependency>
+                    <groupId>org.mongodb</groupId>
+                    <artifactId>mongodb-driver-sync</artifactId>
+                    <version>5.3.1</version>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <id>profile-2</id>
+            <properties>
+                <jdk>17</jdk>
+            </properties>
+            <repositories>
+                <repository>
+                    <id>spring-repo</id>
+                    <url>https://repo.spring.io/ui/packages</url>
+                </repository>
+            </repositories>
+            <dependencies>
+                <dependency>
+                    <groupId>com.mysql</groupId>
+                    <artifactId>mysql-connector-j</artifactId>
+                    <version>9.2.0</version>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>5.16.0</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.36</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
 </project>

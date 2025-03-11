@@ -19,9 +19,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.helloworld</groupId>
+            <groupId>${parent.groupId}</groupId>
             <artifactId>core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${parent.version}</version>
         </dependency>
     </dependencies>
 
